@@ -1,0 +1,33 @@
+.ul {
+    height: 80px;
+    width: 10px;
+}
+
+table {
+    border-collapse: collapse;
+    font-size: 20px;
+}
+
+td {
+    border: 1px solid black;
+    padding: 10px;
+    text-align: center;
+    background-color: #e5f0e6;
+    color: #086d45;
+}
+
+.content-table {
+    border: 1px solid black;
+    padding: 10px;
+    text-align: center;
+    background-color: #e5f0e6;
+    color: #086d45;
+}
+
+th {
+    border: 1px solid black;
+    padding: 10px;
+    text-align: center;
+    background-color: #e5f0e6;
+    color: #086d45;
+}

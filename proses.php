@@ -1,6 +1,6 @@
 <?php
 
-include("database/koneksi.php");
+include_once("database/koneksi.php");
 
 // cek apakah tombol daftar sudah diklik atau blum?
 if(isset($_POST['daftar'])){
