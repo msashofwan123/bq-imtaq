@@ -290,9 +290,10 @@
           // tampilkan di kolom ke dua
           $showData.html(list);
 
-
+          // Menampilkan Ayat Al-Qur'an
           $('.surat').on('click', function (event) {
             console.log($(event.target).data("idsurat"));
+            
             var id = $(event.target).data("idsurat");
             var url = 'https://api.alquran.cloud/v1/surah/' + id + '?offset=0&limit=10';
 
