@@ -3,7 +3,7 @@
 $servername = "localhost";
 $username = "root";
 $password = "";
-$dbname = "bq-imtaq";
+$dbname = "imtaq-bq";
 
 // Create connection
 $conn = new mysqli($servername, $username, $password, $dbname);
