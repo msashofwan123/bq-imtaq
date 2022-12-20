@@ -279,21 +279,25 @@
           const head = ''
           const markup = respon.data
             .map(item => `
-            <li class="surat" data-idsurat="${item.number}"><a class="dropdown-item" href="#" data-idsurat="${item.number}">${item.name}</a></li>
+            <tr>
+            <td class="surat" data-idsurat="${item.number}" data-namesurat="${item.englishName}" data-jmlayat="${item.numberOfAyahs}">${item.number}</td>
+            <td class="surat" data-idsurat="${item.number}" data-namesurat="${item.englishName}" data-jmlayat="${item.numberOfAyahs}">${item.name}</td>
+            <td class="surat" data-idsurat="${item.number}" data-namesurat="${item.englishName}" data-jmlayat="${item.numberOfAyahs}">${item.englishName}</td>
+            <td class="surat" data-idsurat="${item.number}" data-namesurat="${item.englishName}" data-jmlayat="${item.numberOfAyahs}">${item.numberOfAyahs} Ayat</td>
+            </tr>
               `)
             .join('');
-
-          const list = $('<ul/>').html(head + markup);
+            const list = $('<div class="table-responsive"> <table class="table"/> </div>').html(head + markup);
 
           // tampilkan di kolom ke dua
           $showData.html(list);
 
           // Menampilkan Ayat Al-Qur'an
-          $('.surat').on('click', function (event) {
+          $('.surat').on('click', (event) => {
             console.log($(event.target).data("idsurat"));
 
             var id = $(event.target).data("idsurat");
-            var url = 'https://api.alquran.cloud/v1/surah/' + id + '?offset=0&limit=10';
+            var url = `https://api.alquran.cloud/v1/surah/` + id + `?offset=0&limit=10`;
 
             $.getJSON(url, (respon2) => {
               console.log(respon2.code);
