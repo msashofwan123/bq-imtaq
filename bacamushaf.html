@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap"
+    rel="stylesheet">
+
+  <title>Mushaf Al-Qur'an</title>
+
+  <!-- Bootstrap core CSS -->
+  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+
+  <!-- Additional CSS Files -->
+  <link rel="stylesheet" href="assets/css/fontawesome.css">
+  <link rel="stylesheet" href="assets/css/bacamushaf.css">
+
+  <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
+
+</head>
+
+<body>
+
+  <!-- ***** Header Area Start ***** -->
+  <div class="container">
+    <div class="row">
+      <header class="n-header">
+        <nav class="n-navbar">
+          <a href="#" class="n-navbar-brand">MushafQu</a>
+          <ul class="n-navbar-nav">
+            <li class="n-nav-item">
+              <a href="#" class="n-nav-link">Home</a>
+            </li>
+            <li class="n-nav-item">
+              <a href="#" class="n-nav-link">About</a>
+            </li>
+            <li class="n-nav-item">
+              <a href="#" class="n-nav-link">Contact</a>
+            </li>
+          </ul>
+        </nav>
+      </header>
+    </div>
+  </div>
+  <!-- ***** Header Area End ***** -->
+
+  <!-- Kontrol Mushaf Start  -->
+  <div class="container-full">
+    <div class="row">
+      <div class="n-kontrol-mushaf">
+        <ul class="n-ul-kontrol">
+          <li class="n-li-kontrol">
+            <a href="#" id="pilihsurat" class="n-pilih">Pilih Surat</a>
+          </li>
+          <li class="n-li-kontrol">
+            <a href="#" id="pilihayat" class="n-pilih">Pilih Ayat</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  </br></br></br></br></br></br></br>
+
+  <footer>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="copyright">
+            <p>Copyright © 2022 Baitul Qur'an Wonogiri | All Rights Reserved.
+              <br>
+              Designed by <a rel="nofollow" href="https://shofwan-cv.netlify.app/" title="Web Designer">One-Project</a>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- <script>
+
+    $(document).ready(() => {
+
+      const $showData = $('#show-data');
+      const $raw = $('pre');
+
+      $('#get-data').on('click', (event) => {
+        //  jangan refresh halaman    
+        event.preventDefault();
+
+        $showData.text('Loading the JSON file.');
+
+        $.getJSON('https://api.alquran.cloud/v1/surah', (respon) => {
+          console.log(respon.code);
+          console.log(respon.status);
+
+          const head = '<thead><tr><th>No</th><th>Surat</th></tr></thead>'
+          const markup = respon.data
+            .map(item => `
+  <tr class="surat" data-idsurat="${item.number}">
+    <td>${item.number}</td>
+    <td>${item.name}</td>
+  </tr>
+`)
+            .join('');
+
+          const list = $('<table/>').html(head + markup);
+
+          $showData.html(list);
+
+          $('.surat').on('click', function (event) {
+          console.log($(event.target).data("nomer"));
+      });
+
+        });
+      });
+
+    });
+
+  </script> -->
+
+  <script>
+    $(document).ready(() => {
+
+      const $showAyah = $('#show-ayah');
+      const $showData = $('#show-data');
+
+      $('#get-data').on('click', (event) => {
+        //  jangan refresh halaman    
+        event.preventDefault();
+
+        $showData.text('Loading the JSON file.');
+
+        // get json di endpoint
+        $.getJSON('https://api.alquran.cloud/v1/surah', (respon) => {
+          console.log(respon.code);
+          console.log(respon.status);
+
+          // mengatur ulang format respon dari json menjadi html
+          const head = ''
+          const markup = respon.data
+            .map(item => `
+            <tr>
+            <td class="surat table-primary" data-idsurat="${item.number}" data-namesurat="${item.englishName}" data-jmlayat="${item.numberOfAyahs}">${item.number}</td>
+            <td class="surat table-primary" data-idsurat="${item.number}" data-namesurat="${item.englishName}" data-jmlayat="${item.numberOfAyahs}">${item.name}</td>
+            <td class="surat table-primary" data-idsurat="${item.number}" data-namesurat="${item.englishName}" data-jmlayat="${item.numberOfAyahs}">${item.englishName}</td>
+            <td class="surat table-primary" data-idsurat="${item.number}" data-namesurat="${item.englishName}" data-jmlayat="${item.numberOfAyahs}">${item.numberOfAyahs} Ayat</td>
+            </tr>
+              `)
+            .join('');
+          const list = $('<div class="table-responsive"> <table class="table"/> </div>').html(head + markup);
+
+          // tampilkan di kolom ke dua
+          $showData.html(list);
+
+          // Menampilkan Ayat Al-Qur'an
+          $('.surat').on('click', (event) => {
+            console.log($(event.target).data("idsurat"));
+
+            var id = $(event.target).data("idsurat");
+            var url = `https://api.alquran.cloud/v1/surah/` + id + `?offset=0&limit=10`;
+
+            $.getJSON(url, (respon2) => {
+              console.log(respon2.code);
+              console.log(respon2.status);
+
+              // mengatur ulang format respon dari json menjadi html
+              var surah = $(event.target).data("namesurat");
+              var ayahs = $(event.target).data("jmlayat");
+
+              const head = '<tr><th>' + id + '</th><th>Surat ' + surah + '</th><th>' + ayahs + ' ayat</th></tr>';
+              const markupAyah = respon2.data.ayahs
+                .map(item => `
+                <tr>
+                  <td colspan="3">${item.text}</td>
+                </tr>  
+              `)
+                .join('');
+
+              const listAyah = $('<table class="table"/>').html(head + markupAyah);
+
+              $showAyah.html(listAyah);
+            });
+          });
+
+        });
+      });
+
+    });
+  </script>
+</body>
+
+</html>

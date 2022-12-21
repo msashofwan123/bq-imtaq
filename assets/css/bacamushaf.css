@@ -1,0 +1,97 @@
+/* CSS Navbar */
+
+.n-header {
+    padding-bottom: 74px;
+}
+
+.n-navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #086d45;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    height: 70px;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    position: fixed;
+}
+
+.n-navbar-brand {
+    font-size: 2em;
+    font-weight: bold;
+    color: #e5f0e6;
+    text-decoration: none;
+    padding-left: 12px;
+}
+
+.n-navbar-brand:hover {
+    text-decoration: none;
+    color: #adffb3;
+}
+
+.n-navbar-nav {
+    display: flex;
+    padding-top: 12px;
+}
+
+.n-nav-item {
+    list-style: none;
+}
+
+.n-nav-link {
+    display: block;
+    padding: 0.5em 1em;
+    color: white;
+    text-decoration: none;
+    border-radius: 12px;
+    transition: background-color 0.5s;
+}
+
+.n-nav-link:hover {
+    border-radius: 12px;
+    text-decoration: none;
+    color: #16e407;
+    background-color: #0fa96b;
+}
+
+body {
+    overflow: hidden;
+}
+
+/* CSS Kontrol Mushaf */
+.n-kontrol-mushaf {
+    background-color: #003940;
+}
+
+.n-ul-kontrol {
+    display: flex;
+    padding-top: 8px;
+}
+
+.n-li-kontrol {
+    list-style: none;
+}
+
+.n-pilih {
+    display: block;
+    text-decoration: none;
+    color: #e5f0e6;
+    padding: 0.5em 1em;
+    border-radius: 12px;
+    transition: background-color 0.5s;
+}
+
+.n-pilih:hover {
+    text-decoration: none;
+    color: #07e2ff;
+    border-radius: 12px;
+    background-color: #005b66;
+}
+
+/* .n-pilih-ayat {
+    text-decoration: none;
+    color: #e5f0e6;
+    padding: 0.5em 1em;
+} */
