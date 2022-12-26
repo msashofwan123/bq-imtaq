@@ -13,9 +13,7 @@ $alasan = $_POST['alasan'];
 $query = "INSERT INTO pendaftar (id, nama, alamat, tlahir, handphone, alasan) VALUES ('$id', '$nama', '$alamat', '$tlahir', '$handphone', '$alasan')";
 
 if (mysqli_query($conn, $query)) {
-    ?>
-    bodo amat
-    <?php
+    echo "data berhasil";
 } else {
      echo "Error: " . $query . "<br>" . mysqli_error($conn);
 }
