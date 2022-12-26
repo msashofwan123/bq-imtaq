@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" type="text/css"
+    href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+  <title>Pendaftaran Santri Baru Baitul Qur'an</title>
+
+  <!-- Bootstrap core CSS -->
+  <!-- <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet"> -->
+  <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@9.17.1/dist/sweetalert2.min.css">
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@9.17.1/dist/sweetalert2.min.js"></script>
+
+
+
+  <!-- Additional CSS Files -->
+  <link rel="stylesheet" href="assets/css/fontawesome.css">
+  <link rel="stylesheet" href="assets/css/templatemo-onix-digital.css">
+  <link rel="stylesheet" href="assets/css/animated.css">
+  <link rel="stylesheet" href="assets/css/owl.css">
+  <!--
+
+-->
+</head>
+
+<body>
+
+  <!-- ***** Preloader Start ***** -->
+  <div id="js-preloader" class="js-preloader">
+    <div class="preloader-inner">
+      <span class="dot"></span>
+      <div class="dots">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+  </div>
+  <!-- ***** Preloader End ***** -->
+
+  <div class="our-services section">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-6">
+          <form id="form-submit" method="POST">
+
+            <h2>
+              <center>Formulir Pendaftaran Santri Baru
+            </h2>
+
+            <div class="panel panel-primary">
+              <div class="panel-heading">
+                Wajib Mengisi Data Dengan Sesuai dan Akurat
+              </div>
+              <div class="panel panel-body">
+
+                <div class="form-group">
+                  <label for="id">Id Siswa (Diisi Oleh Sistem)</label>
+                  <input type="number" name="id" id="id" placeholder="Id Mahasantri" class="form-control" readonly />
+                </div>
+
+                <div class="form-group">
+                  <label for="nama">Nama Lengkap<sup style="color:red">*</sup></label>
+                  <input type="text" name="nama" id="nama" placeholder="Nama Lengkap" class="form-control">
+                </div>
+
+                <div class="form-group">
+                  <label for="alamat">Alamat<sup style="color:red">*</sup></label>
+                  <input type="text" name="alamat" id="alamat" placeholder="Alamat" class="form-control" />
+                </div>
+
+                <div class="form-group">
+                  <label for="tlahir">Tanggal Lahir<sup style="color:red">*</sup></label>
+                  <input type="date" name="tlahir" id="tlahir" placeholder="" class="form-control" />
+                </div>
+
+                <div class="form-group">
+                  <label for="telepon">Nomor Telepon<sup style="color:red">*</sup></label>
+                  <input type="number" name="handphone" id="handphone" placeholder="6281234567890" class="form-control" />
+                </div>
+
+                <div class="form-group">
+                  <label for="alasan">Alasan Masuk Pesantren<sup style="color:red">*</sup></label>
+                  <input type="text" name="alasan" id="alasan" placeholder="Ingin Menjadi Sopir" class="form-control" />
+                </div>
+                <div class="form-group">
+                  <label><sup style="color:red">*</sup> = Wajib DIisi</label>
+                </div>
+
+                <div class="form-group">
+                  <button value="daftar" class="btn btn-success send" id="daftar" name="daftar">Daftar</button>
+                </div>
+
+              </div>
+            </div>
+          </form>
+        </div>
+
+        <div class="col-lg-6">
+          <h2 style="text-align:center">Ketentuan Pendaftaran</h2>
+          <div class="panel panel-info">
+            <div class="panel-heading">
+              <strong>SYARAT UMUM</strong>
+            </div>
+            <div class="panel panel-body">
+
+              <div class="col-lg-10">
+                <h4>
+                  <ol>
+                    <br>
+                    <li>1. Kelas 6 SD/MI Sederajat</li>
+                    <li>2. Hafal Juz 30 (Minimal Hafalan 1 Juz)</li>
+                    <li>3. Mampu Baca Tulis Al-Qur'an dengan baik</li>
+                  </ol>
+                </h4>
+              </div>
+            </div>
+          </div>
+
+          <div class="panel panel-success">
+            <div class="panel-heading">
+              <strong>SYARAT ADMINISTRASI</strong>
+            </div>
+            <div class="panel panel-body">
+
+              <div class="col-lg-12">
+                <h5>
+                  <ol>
+                    <br>
+                    <li>1. Mendaftar melalui Whatsaapp <strong>(DAFTAR IMTAQ/NAMA)</strong></li><br>
+                    <li>2. FC Akte Kelahiran Sebanyak 2 Lembar</li><br>
+                    <li>3. FC Ijazah SD/MI sebanyak 2 Lembar (Bisa Menyusul)</li><br>
+                    <li>4. FC KK & KTP ORTU/Wali 2 Lembar</li><br>
+                    <li>5. Pas Poto Berwanra Terbaru; 2x3, 3x4, BG Biru (3 Lembar)</li><br>
+                    <li>6. Membayar Biaya Pendaftaran Sebesar Rp.200.000,-</li><br>
+                    <li>7. No. Rekening: <br> <strong>7 212 639 081</strong> an. PSB BAITUL QURAN</li><br>
+                    <li>8. Konfirmasi Transfer Ke Nomor Whatsapp <strong>0896 5373 2962</strong> (Ust. Munir Ramadhan)
+                    </li>
+                  </ol>
+                </h5>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="footer-dec">
+      <img src="assets/images/footer-dec.png" alt="">
+    </div>
+
+    <footer>
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-3">
+            <div class="about footer-item">
+              <div class="logo">
+                <a href="#"><img src="assets/images/logo.png" alt="Onix Digital TemplateMo"></a>
+              </div>
+              <a href="#">Baitul Qur'an Wonogiri</a>
+              <ul>
+                <li><a href="https://www.facebook.com/bqwonogiri"><i class="fa fa-facebook"></i></a></li>
+                <li><a href="https://wa.me/6289653732962"><i class="fa fa-whatsapp"></i></a></li>
+                <li><a href="https://baitulquranwng.com/"><i class="fa fa-globe"></i></a></li>
+                <li><a href="https://www.instagram.com/baitul_quran_wonogiri/?hl=id"><i class="fa fa-instagram"></i></a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-lg-3">
+            <div class="services footer-item">
+              <h4>Seputar Pendaftaran</h4>
+              <ul>
+                <li><a href="#">Materi Tes</a></li>
+                <li><a href="#">Rincian Biaya</a></li>
+                <li><a href="#">Persyaratan Pendaftaran</a></li>
+                <li><a href="#">Tes Wawancara</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-lg-3">
+            <div class="community footer-item">
+              <h4>Informasi Lain</h4>
+              <ul>
+                <li><a href="#">Galeri Kegiatan</a></li>
+                <li><a href="#">Kurikulum Pendidikan</a></li>
+                <li><a href="#">Tenaga Pendidikan</a></li>
+                <li><a href="#">Kesan Pesan Alumni</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-lg-3">
+            <div class="subscribe-newsletters footer-item">
+              <h4>Ikutin Pembaruan Kami</h4>
+              <p>Dapatkan informasi terbaru melalui email anda</p>
+              <form action="#" method="get">
+                <input type="text" name="email" id="email" pattern="[^ @]*@[^ @]*" placeholder="Your Email"="">
+                <button type="submit" id="form-submit" class="main-button "><i class="fa fa-paper-plane-o"></i></button>
+              </form>
+            </div>
+          </div>
+          <div class="col-lg-12">
+            <div class="copyright">
+              <p>Copyright © 2022 Baitul Qur'an Wonogiri | All Rights Reserved.
+                <br>
+                Designed by <a rel="nofollow" href="https://shofwan-cv.netlify.app/" title="Web Designer">El-Rasheed</a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+
+    <!-- Scripts -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/owl-carousel.js"></script>
+    <script src="assets/js/animation.js"></script>
+    <script src="assets/js/imagesloaded.js"></script>
+    <script src="assets/js/custom.js"></script>
+
+    <script>
+      // Acc
+      $(document).on("click", ".naccs .menu div", function () {
+        var numberIndex = $(this).index();
+
+        if (!$(this).is("active")) {
+          $(".naccs .menu div").removeClass("active");
+          $(".naccs ul li").removeClass("active");
+
+          $(this).addClass("active");
+          $(".naccs ul").find("li:eq(" + numberIndex + ")").addClass("active");
+
+          var listItemHeight = $(".naccs ul")
+            .find("li:eq(" + numberIndex + ")")
+            .innerHeight();
+          $(".naccs ul").height(listItemHeight + "px");
+        }
+      });
+    </script>
+    <script src = "daftarjs.js">
+    </script>
+</body>
+
+</html>
