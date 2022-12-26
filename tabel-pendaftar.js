@@ -28,7 +28,7 @@ $(document).ready(() => {
             </tr>
             `)
                 .join('');
-            const footer = `</table`
+            const footer = `</table>`
             const list = (head + thead + markup + footer);
 
             // tampilkan di kolom ke dua
