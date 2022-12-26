@@ -2,19 +2,23 @@
 
 use LDAP\Result;
 
-include_once('database/koneksi.php');
+include_once('database/koneksi.php');   
 
-$sql = "SELECT * FROM pendaftar";
-$result = mysqli_query($conn, $sql);
+$query = "SELECT * FROM pendaftar";
 
+// Eksekusi query dan simpan hasilnya dalam variabel
+$result = mysqli_query($conn, $query);
+
+// Inisialisasi array untuk menampung data
+$data = array();
+
+// Memasukkan data ke dalam array
 while ($row = mysqli_fetch_assoc($result)) {
-    $record = array(
-        "id" => $row['id'],
-        "nama" => $row['nama'],
-        "alamat" => $row['alamat'],
-        "tlahir" => $row['tlahir'],
-        "handphone" => $row['handphone'],
-        "alasan" => $row['alasan']
-    );
-    echo json_encode($record) . "\n";
+  $data[] = $row;
 }
+
+// Menutup koneksi ke database
+mysqli_close($conn);
+
+// Menampilkan data dalam format JSON
+echo json_encode($data);
