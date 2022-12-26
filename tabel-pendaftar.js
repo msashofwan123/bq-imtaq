@@ -14,18 +14,20 @@ $(document).ready(() => {
             console.log(respon.status);
 
             // mengatur ulang format respon dari json menjadi html
-            const head = ''
+            const head = ``
             const markup = respon.data
                 .map(item => `
-          <tr>
-          <td class="surat">${item.id}</td>
-          <td class="surat">${item.nama}</td>
-          <td class="surat">${item.alamat}</td>
-          <td class="surat">${item.tlahir} Ayat</td>
-          </tr>
+            <tr>
+          <td class="surat table-info">${item.id}</td>
+          <td class="surat table-info">${item.nama}</td>
+          <td class="surat table-info">${item.alamat}</td>
+          <td class="surat table-info">${item.tlahir}</td>
+          <td class="surat table-info">${item.handphone}</td>
+          <td class="surat table-info">${item.alasan}</td>
+            </tr>
             `)
                 .join('');
-            const list = $('<div class="table-responsive"> <table class="table"/> </div>').html(head + markup);
+            const list = $('<table class="table table-borderless">').html(head + markup);
 
             // tampilkan di kolom ke dua
             $showData.html(list);

@@ -54,7 +54,7 @@
         </br>
         <h2 style="text-align:center">Data Pendaftar</h2>
         <div class="main-blue-button-hover" style="text-align:center;"><a href="#" id="get-data">TAMPILKAN PENDAFTAR BQ IMTAQ</a></div>
-        <div id="show-data" class="auto"></div>
+        <div id="show-data"></div>
       </div>
     </div>
   </div>
