@@ -14,7 +14,8 @@ $(document).ready(() => {
             console.log(respon.status);
 
             // mengatur ulang format respon dari json menjadi html
-            const head = ``
+            const head = `<br><table class="table table-bordered"`
+            const thead = `<thead><tr><th>ID</th><th>Nama</th><th>Alamat</th><th>Tempat Lahir</th><th>No Hp</th><th>Alasan</th></tr></thead>`
             const markup = respon.data
                 .map(item => `
             <tr>
@@ -27,7 +28,8 @@ $(document).ready(() => {
             </tr>
             `)
                 .join('');
-            const list = $('<table class="table table-borderless">').html(head + markup);
+            const footer = `</table`
+            const list = (head + thead + markup + footer);
 
             // tampilkan di kolom ke dua
             $showData.html(list);
