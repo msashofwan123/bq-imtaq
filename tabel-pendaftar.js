@@ -74,7 +74,7 @@ $(document).ready(() => {
                     icon: 'success', // tipe pesan (success, error, warning, info)
                 })
             }
-        }).always(function() {
+        }).always(function () {
             // Menjalankan perintah ShowTable saat Pendaftaran berhasil
             showTable();
         });
