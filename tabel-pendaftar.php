@@ -1,3 +1,10 @@
+<?php 
+header("Cache-Control: no-cache, no-store, must-revalidate"); // HTTP 1.1.
+header("Pragma: no-cache"); // HTTP 1.0.
+header("Expires: 0"); // Proxies.
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -15,7 +22,7 @@
 
   <!-- Bootstrap core CSS -->
   <!-- <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet"> -->
-  <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
+  <script src="https://code.jquery.com/jquery-3.6.3.min.js" integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@9.17.1/dist/sweetalert2.min.css">
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9.17.1/dist/sweetalert2.min.js"></script>
@@ -48,10 +55,10 @@
   <!-- ***** Preloader End ***** -->
 
 
-  <div class="container-fluid h-100">
-    <div class="row h-100">
+  <div class="container">
+    <div class="row">
 
-      <div class="col-12 col-md-6">
+      <div class="col-lg-6">
         </br>
         <h2 style="text-align:center">Tabel Pendaftaran</h2>
         <div>
@@ -110,7 +117,7 @@
         </div>
       </div>
 
-      <div class="col-12 col-md-6 h-100 overflow-auto">
+      <div class="col-lg-6">
         </br>
         <h2 style="text-align:center">Data Pendaftar</h2>
         <h3 style="text-align:center">SANTRI BARU IMTAQ SHIGHOR</h3>
@@ -119,6 +126,7 @@
     </div>
   </div>
 
+
   <!-- Scripts -->
   <script src="vendor/jquery/jquery.min.js"></script>
   <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
@@ -126,6 +134,7 @@
   <script src="assets/js/animation.js"></script>
   <script src="assets/js/imagesloaded.js"></script>
   <script src="assets/js/custom.js"></script>
+  <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js" integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V" crossorigin="anonymous"></script> -->
 
   <script>
     // Acc

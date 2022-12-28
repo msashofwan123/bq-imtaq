@@ -1,5 +1,8 @@
 $(document).ready(() => {
 
+    // Menampilkan Table Saat Awal Reload
+    showTable();
+
     function showTable() {
         const $showData = $('#show-data');
 
@@ -11,17 +14,20 @@ $(document).ready(() => {
             console.log(respon.status);
 
             // Mengatur Ulang Format Dari JSON Menjadi HTML
-            const head = `<br><table class="table table-bordered table-responsive">`
+            const head = `<br><table id="tabelnya" class="table table-bordered table-responsive">`
             const thead = `<thead><tr><th>ID</th><th>Nama</th><th>Alamat</th><th>Tempat Lahir</th><th>No Hp</th><th>Alasan</th></tr></thead><tbody>`
             const markup = respon.data
                 .map(item => `
-            <tr>
-          <td class="imtaq" data-idimtaq="${item.id}">${item.id}</td>
-          <td class="imtaq" data-idimtaq="${item.id}">${item.nama}</td>
-          <td class="imtaq" data-idimtaq="${item.id}">${item.alamat}</td>
-          <td class="imtaq" data-idimtaq="${item.id}">${item.tlahir}</td>
-          <td class="imtaq" data-idimtaq="${item.id}">${item.handphone}</td>
-          <td class="imtaq" data-idimtaq="${item.id}">${item.alasan}</td>
+            <tr data-id="${item.id}">
+          <td>${item.id}</td>
+          <td>${item.nama}</td>
+          <td>${item.alamat}</td>
+          <td>${item.tlahir}</td>
+          <td>${item.handphone}</td>
+          <td>${item.alasan}</td>
+          <td>
+                <button class="btn btn-danger hapus" id="hapus" data-id="${item.id}">HAPUS</button>
+          </td>
             </tr>
             `)
                 .join('');
@@ -33,11 +39,49 @@ $(document).ready(() => {
 
             // Menampilkan Data table ke Variabel
             $showData.html(list);
+
+            // Memproses Penghapusan Data
+            $('.hapus').on('click', (event) => {
+                // console.log($(event.target).data("id"));
+                var hapus = $(event.target).data("id");
+                // console.log(hapus);
+
+                // Menampilkan Layar Konfirmasi Penghapusan Data
+                swal.fire({
+                    title: 'Apakah Anda Yakin?',
+                    text: "Perintah Tidak dapat dibatalkan!",
+                    icon: 'warning', // tipe pesan (success, error, warning, info)
+                    showCancelButton: true,
+                    confirmButtonColor: '#3085d6',
+                    cancelButtonColor: '#d33',
+                    confirmButtonText: 'YA'
+                }).then((result) => {
+                    if (result.value) {
+
+                        // Proses Menghapus Data
+                        $.ajax({
+                            url: 'delete.php',
+                            method: 'POST',
+                            data: {
+                                id: hapus
+                            },
+                            success: function () {
+                                // Menampilkan Konfirmasi Bahwa Data Telah Dihapus
+                                Swal.fire({
+                                    title: 'SUKSES',
+                                    text: 'Data Berhasil Di Hapus',
+                                    icon: 'success', // tipe pesan (success, error, warning, info)
+                                })
+                            }
+                        }).always(function () {
+                            // Menjalankan perintah ShowTable saat Penghapusan berhasil
+                            showTable();
+                        });
+                    }
+                });
+            });
         });
     }
-
-    // Menampilkan Table Saat Awal Reload
-    showTable();
 
     $('#form-submit').submit(function (event) {
         event.preventDefault(); // mencegah form dari reload
