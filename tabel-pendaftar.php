@@ -48,12 +48,72 @@
   <!-- ***** Preloader End ***** -->
 
 
-  <div class="container">
-    <div class="row">
-      <div class="col-lg-12">
+  <div class="container-fluid h-100">
+    <div class="row h-100">
+
+      <div class="col-12 col-md-6">
+        </br>
+        <h2 style="text-align:center">Tabel Pendaftaran</h2>
+        <div>
+          <form id="form-submit" method="POST">
+
+            <h2>
+              <center>Formulir Pendaftaran Santri Baru
+            </h2>
+
+            <div class="panel panel-primary">
+              <div class="panel-heading">
+                Wajib Mengisi Data Dengan Sesuai dan Akurat
+              </div>
+              <div class="panel panel-body">
+
+                <div class="form-group">
+                  <label for="id">Id Santri (Diisi Oleh Sistem)</label>
+                  <input type="number" name="id" id="id" placeholder="Id Santri" class="form-control" readonly />
+                </div>
+
+                <div class="form-group">
+                  <label for="nama">Nama Lengkap<sup style="color:red">*</sup></label>
+                  <input type="text" name="nama" id="nama" placeholder="Nama Lengkap" class="form-control">
+                </div>
+
+                <div class="form-group">
+                  <label for="alamat">Alamat<sup style="color:red">*</sup></label>
+                  <input type="text" name="alamat" id="alamat" placeholder="Alamat" class="form-control" />
+                </div>
+
+                <div class="form-group">
+                  <label for="tlahir">Tanggal Lahir<sup style="color:red">*</sup></label>
+                  <input type="date" name="tlahir" id="tlahir" placeholder="" class="form-control" />
+                </div>
+
+                <div class="form-group">
+                  <label for="telepon">Nomor Telepon<sup style="color:red">*</sup></label>
+                  <input type="number" name="handphone" id="handphone" placeholder="6281234567890" class="form-control" />
+                </div>
+
+                <div class="form-group">
+                  <label for="alasan">Alasan Masuk Pesantren<sup style="color:red">*</sup></label>
+                  <input type="text" name="alasan" id="alasan" placeholder="Ingin Menjadi Sopir" class="form-control" />
+                </div>
+                <div class="form-group">
+                  <label><sup style="color:red">*</sup> = Wajib DIisi</label>
+                </div>
+
+                <div class="form-group">
+                  <button value="daftar" class="btn btn-success send" id="daftar" name="daftar">Daftar</button>
+                </div>
+
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+
+      <div class="col-12 col-md-6 h-100 overflow-auto">
         </br>
         <h2 style="text-align:center">Data Pendaftar</h2>
-        <div class="main-blue-button-hover" style="text-align:center;"><a href="#" id="get-data">TAMPILKAN PENDAFTAR BQ IMTAQ</a></div>
+        <h3 style="text-align:center">SANTRI BARU IMTAQ SHIGHOR</h3>
         <div id="show-data"></div>
       </div>
     </div>
@@ -86,8 +146,7 @@
       }
     });
   </script>
-  <script src="tabel-pendaftar.js">
-  </script>
+  <script src="tabel-pendaftar.js"></script>
 </body>
 
 </html>
