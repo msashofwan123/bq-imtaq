@@ -3,6 +3,7 @@ $(document).ready(() => {
     // Menampilkan Table Saat Awal Reload
     showTable();
 
+    // Memasukkan Code Untuk menampilkan Table dalam satu Fungsi, yaitu ShowTable
     function showTable() {
         const $showData = $('#show-data');
 
@@ -56,6 +57,7 @@ $(document).ready(() => {
                     cancelButtonColor: '#d33',
                     confirmButtonText: 'YA'
                 }).then((result) => {
+                    // ketika layar konfirmasi di klik "Iya", maka kode yang akan dijalankan adalah:
                     if (result.value) {
 
                         // Proses Menghapus Data
@@ -83,6 +85,7 @@ $(document).ready(() => {
         });
     }
 
+    // Kode Untuk Submit
     $('#form-submit').submit(function (event) {
         event.preventDefault(); // mencegah form dari reload
 
