@@ -124,6 +124,18 @@ $(document).ready(() => {
         }).always(function () {
             // Menjalankan perintah ShowTable saat Pendaftaran berhasil
             showTable();
+        }).always(function () {
+            // Menjalankan Fungsi removeForm untuk menghapus sisa Data di Form
+                removeForm();
         });
     });
+
+    // Fungsi untuk mengkosongkan Value di Form
+    function removeForm() {
+          $("#nama").val('');
+          $("#alamat").val('');
+          $("#tlahir").val('');
+          $("#handphone").val('');
+          $("#alasan").val('');
+    };
 });
